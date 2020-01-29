@@ -8,7 +8,7 @@
             <t t-set="folio" t-value="xml.get('Folio')"/>
             <t t-set="suc" t-value="record.partner_shipping_id.shipping_type_suc"/>
             <t t-set="num" t-value="record.partner_shipping_id.shipping_number_store"/>
-            <t t-set="orden" t-value="record.fields_sales.number_order"/>
+            <t t-set="orden" t-value="record.pos_order_id.number_order"/>
             <t t-set="referencia" t-value="rfc+','+str(num)+','+str(orden)"/>
             <t t-set="fecha" t-value="record.fields_sales.date_of_deli" t-options="{&quot;format&quot;: &quot;yyyy-MM-dd&quot;}"/>
             
