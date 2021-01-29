@@ -21,10 +21,10 @@
                 <t t-set="fecha" t-value="record.fields_sales.date_of_deli" t-options="{&quot;format&quot;: &quot;yyyy-MM-dd&quot;}"/>
             </t>
             <t t-if="record.fecha_entrega">
-                <t t-set="fecha" t-value="record.fecha_entrega" t-options="{&quot;format&quot;: &quot;yyyy-MM-dd&quot;}"/>
+                <t t-set="fecha" t-value="record.fecha_entrega.strftime('%Y-%m-%d')"/>
             </t>
             
-            <add724:Referencia724 xsi:schemaLocation="https://cfd.sifei.com.mx/publicar https://cfd.sifei.com.mx/publicar/Addenda724.xsd" xmlns:xsi="xsi" t-att-Referencia="referencia" t-att-FechadeEntrega="fecha" xmlns:add724="https://cfd.sifei.com.mx/publicar"/>
+            <add724:Referencia724 xsi:schemaLocation="https://cfd.sifei.com.mx/publicar https://cfd.sifei.com.mx/publicar/Addenda724.xsd" xmlns:xsi="xsi" t-att-FechadeEntrega="fecha" t-att-Referencia="referencia" xmlns:add724="https://cfd.sifei.com.mx/publicar"/>
         </template>
         <record id="addenda_siete24" model="ir.ui.view">
             <field name="l10n_mx_edi_addenda_flag">True</field>
