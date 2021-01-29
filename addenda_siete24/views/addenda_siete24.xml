@@ -16,7 +16,13 @@
                  <t t-set="orden" t-value="record.addenda_folio"/>
             </t>
             <t t-set="referencia" t-value="rfc+','+str(num)+','+str(orden)"/>
-            <t t-set="fecha" t-value="record.fields_sales.date_of_deli" t-options="{&quot;format&quot;: &quot;yyyy-MM-dd&quot;}"/>
+            <t t-set="fecha" t-value=""/>
+            <t t-if="record.fields_sales.date_of_deli">
+                <t t-set="fecha" t-value="record.fields_sales.date_of_deli" t-options="{&quot;format&quot;: &quot;yyyy-MM-dd&quot;}"/>
+            </t>
+            <t t-if="record.fecha_entrega">
+                <t t-set="fecha" t-value="record.fecha_entrega" t-options="{&quot;format&quot;: &quot;yyyy-MM-dd&quot;}"/>
+            </t>
             
             <add724:Referencia724 xsi:schemaLocation="https://cfd.sifei.com.mx/publicar https://cfd.sifei.com.mx/publicar/Addenda724.xsd" xmlns:xsi="xsi" t-att-Referencia="referencia" t-att-FechadeEntrega="fecha" xmlns:add724="https://cfd.sifei.com.mx/publicar"/>
         </template>
@@ -25,3 +31,4 @@
         </record>
     </data>
 </odoo>
+ 
